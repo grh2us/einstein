@@ -13,3 +13,14 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+  einstein-db:
+    container_name: einstein-db
+    image: 'postgres:10.7'
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: einstein
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: einstein
+    volumes:
+      - './schemas/changelog.sql:/docker-entrypoint-initdb.d/changelog.sql'

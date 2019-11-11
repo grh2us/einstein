@@ -1,7 +1,7 @@
 # einstein
 Setup
 1. From the top level directory run `mvn clean install`
-2. Now cd into `kafka`
+2. Now cd into `docker`
 3. Run `./einstein-runner.sh 3`. This will bring up a kafka cluster
 with three brokers while starting the API as well
 4. Using Postman, create a POST request to `http://localhost:8080/produce-message` with
