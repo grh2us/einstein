@@ -17,7 +17,10 @@ public class EinsteinProducer {
                 "This is the message " + message);
         try {
             RecordMetadata recordMetadata = producer.send(record).get();
-            log.info("Logging metadata: " + recordMetadata.topic());
+            log.info("Topic name {}, partition {}, offset {}",
+                    recordMetadata.topic(),
+                    recordMetadata.partition(),
+                    recordMetadata.offset());
         } catch (Exception e) {
             log.error("There was an error", e);
         }
