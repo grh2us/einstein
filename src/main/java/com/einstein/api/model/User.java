@@ -15,8 +15,8 @@ public class User {
     @GeneratedValue
     private long id;
 
-    @Column(name = "user_name")
-    private String userName;
+    @Column(name = "user_id")
+    private String userId;
 
     @Column(name = "email")
     private String email;

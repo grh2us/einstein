@@ -1,6 +1,6 @@
 package com.einstein.api.controller;
 
-import com.einstein.api.model.LoginRequest;
+import com.einstein.api.model.SignupRequest;
 import com.einstein.api.model.User;
 import com.einstein.api.repository.UsersRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,12 +18,14 @@ public class EinsteinApiController {
     private final UsersRepository usersRepository;
 
 
-    @PostMapping("/login")
+    @PostMapping("/sign-up")
     @CrossOrigin(origins = "http://localhost:3000")
-    public void login(@RequestBody LoginRequest loginRequest) {
+    public void login(@RequestBody SignupRequest signupRequest) {
         User user = new User();
-        user.setUserName(loginRequest.getUserId());
-        log.info("Request {}",loginRequest);
+        user.setUserId(signupRequest.getUserId());
+        user.setEmail(signupRequest.getEmail());
+        user.setName(signupRequest.getName());
+        log.info("Request {}",signupRequest);
         usersRepository.save(user);
     }
 

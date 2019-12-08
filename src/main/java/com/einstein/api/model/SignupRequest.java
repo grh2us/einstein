@@ -3,7 +3,8 @@ package com.einstein.api.model;
 import lombok.Data;
 
 @Data
-public class LoginRequest {
+public class SignupRequest {
+    private String name;
+    private String email;
     private String userId;
-    private String password;
 }
