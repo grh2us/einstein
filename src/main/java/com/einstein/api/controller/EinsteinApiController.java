@@ -20,7 +20,7 @@ public class EinsteinApiController {
 
     @PostMapping("/sign-up")
     @CrossOrigin(origins = "http://localhost:3000")
-    public void login(@RequestBody SignupRequest signupRequest) {
+    public void signUp(@RequestBody SignupRequest signupRequest) {
         User user = new User();
         user.setUserId(signupRequest.getUserId());
         user.setEmail(signupRequest.getEmail());
