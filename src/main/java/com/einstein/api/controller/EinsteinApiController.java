@@ -5,6 +5,7 @@ import com.einstein.api.model.User;
 import com.einstein.api.repository.UsersRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ public class EinsteinApiController {
 
 
     @PostMapping("/login")
+    @CrossOrigin(origins = "http://localhost:3000")
     public void login(@RequestBody LoginRequest loginRequest) {
         User user = new User();
         user.setUserName(loginRequest.getUserId());
