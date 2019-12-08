@@ -18,6 +18,12 @@ public class User {
     @Column(name = "user_name")
     private String userName;
 
-    @Column(name = "password")
-    private String password;
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "goals")
+    private String goals;
 }

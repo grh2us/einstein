@@ -21,7 +21,6 @@ public class EinsteinApiController {
     public void login(@RequestBody LoginRequest loginRequest) {
         User user = new User();
         user.setUserName(loginRequest.getUserId());
-        user.setPassword(loginRequest.getPassword());
         log.info("Request {}",loginRequest);
         usersRepository.save(user);
     }
