@@ -1,0 +1,11 @@
+version: '2'
+services:
+  einstein-db:
+    container_name: einstein-db
+    image: 'postgres:10.7'
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: einstein
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: einstein
