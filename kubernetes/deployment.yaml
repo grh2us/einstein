@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: einstein-deployment
+  labels:
+    app: einstein
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: einstein
+  template:
+    metadata:
+      labels:
+        app: einstein
+    spec:
+      containers:
+        - name: einstein
+          image: 481024610904.dkr.ecr.us-east-2.amazonaws.com/tutoring-service
+          ports:
+            - containerPort: 8080
